@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="borrow.component.css">
+<div class="row mt-3">
+  <div class="col-md-12" style="text-align: right;">
+    <a routerLink="/borrow/add" class="btn btn-success">Add new Borrowing</a>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="h1">All Borrowed</div>
+  <div class="input-group my-3">
+    <input type="text" class="form-control" placeholder="Book Id" />
+    <button class="input-group-text btn btn-primary">Search</button>
+  </div>
+  <div class="col-md-12 mt-2">
+    <div class="card mb-3 card-book ">
+      <div class="card-header d-flex justify-content-between">
+        <span><b>Book ID : </b>1001</span>
+        <span><b>Status : </b>Not Borrowed</span>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Book Name</h5>
+        <hr>
+        <p class="card-text">
+          <span class="me-5"><b>Author : </b>Wasok</span>
+          <span class="me-5"><b>Publisher : </b>NVC</span>
+          <span class="me-5"><b>Price : </b>200</span>
+        </p>
+        <hr>
+        <div class="card-text">
+          <span class="me-5"><b>Day can borrow :</b></span>
+          <span class="me-5"><b>[ student : </b>7 <b>]</b></span>
+          <span class="me-5"><b>[ teacher : </b>120 <b>]</b></span>
+        </div>
+        <hr>
+      </div>
+    </div>
+    <hr class="border border-dark">
+
+    <!-- <div class="card mb-3">
+      <div class="card-header d-flex justify-content-between">
+        <span><b>Member Id : </b>1001</span>
+        <span><b>Category : </b>Student</span>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Wasok</h5>
+        <hr>
+        <div>
+          <p class="d-flex justify-content-between">
+            <b>Lender</b>
+            <span><b>Return Date : </b> 09/1/65</span>
+          </p>
+          <div class="card-text">
+            <span class="me-5"><b>Staff ID :</b>10001</span>
+            <span class="me-5"><b>Name : </b> wwww</span>
+          </div>
+        </div>
+        <hr>
+        <div>
+          <p class="d-flex justify-content-between">
+            <b>Reciever</b>
+            <span><b>Return Date : </b> 11/1/65</span>
+          </p>
+          <div class="card-text">
+            <span class="me-5"><b>Staff ID :</b>10001</span>
+            <span class="me-5"><b>Name : </b> wwww</span>
+          </div>
+        </div>
+        <hr>
+        <div class="me-3">
+          <a routerLink="/return/1" class="btn btn-primary">Return</a>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</div>

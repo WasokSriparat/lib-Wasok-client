@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="login.component.css">
+<div *ngIf="!isLoggedIn">
+  <div class="box-login container mt-5 p-5 w-50">
+    <h1 class="mb-5 text-center">Login</h1>
+    <form [formGroup]="loginForm">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Staff ID</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          formControlName="staffId" required>
+      </div>
+      <div class="mb-5">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" required>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class=" btn-login" (click)="doLogin()">Login</button>
+      </div>
+    </form>
+    <div class="row mt-5">
+      <div class="col text-center" style="color:red">
+        {{ errMessage }}
+      </div>
+    </div>
+  </div>
+</div>
+<app-main *ngIf="isLoggedIn"></app-main>

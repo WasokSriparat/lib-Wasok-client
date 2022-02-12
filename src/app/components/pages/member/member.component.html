@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="member.component.css">
+<div class="row mt-3">
+    <div class="col-md-12" style="text-align: right;">
+        <a routerLink="/member/add" class="btn btn-success">Add new Member</a>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="h1">All Member</div>
+    <div class="input-group my-3" [formGroup]="searchForm">
+        <input type="text" class="form-control" placeholder="Member Id" formControlName="searchId"/>
+        <button class="input-group-text btn btn-primary" (click)="searchId()">Search</button>
+    </div>
+    <div class="col-md-12 mt-2">
+
+        <div class="card mb-3 card-member " *ngFor="let m of members">
+            <div class="card-header d-flex justify-content-between">
+                <span><b>Member ID : </b>{{m.memberId}}</span>
+                <span><b>Category : </b>
+                    <span *ngIf="m.categoryId == 1">นักเรียน</span>
+                    <span *ngIf="m.categoryId == 2">ครู เจ้าหน้าที่</span>
+                </span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{m.name}}</h5>
+                <hr>
+                <p class="card-text">
+                    <span class="me-5"><b>Study Group : </b>{{m.studyGroup}}</span>
+                    <span class="me-5"><b>Tel. : </b>{{m.tel}}</span>
+                </p>
+                <hr>
+                <div class="card-text">
+                    <span class="me-5"><b>Address :</b> {{m.address}}</span>
+                </div>
+                <hr>
+                
+                <div class="d-flex">
+                    <div class="me-3">
+                        <a routerLink="/member/edit/{{m._id}}" class="btn btn-warning">Edit</a>
+                    </div>
+                    <div class="me-3">
+                        <a (click)="deleteMember(m._id)" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        
+        
+    </div>
+</div>

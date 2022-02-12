@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="staff.component.css">
+<div class="row mt-3">
+    <div class="col-md-12" style="text-align: right;">
+        <a routerLink="/staff/add" class="btn btn-success">Add new Staff</a>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="h1">All Staff</div>
+    <div class="input-group my-3" [formGroup]="searchForm">
+        <input type="text" class="form-control" placeholder="Staff Id" formControlName="searchId"/>
+        <button class="input-group-text btn btn-primary" (click)="searchId()">Search</button>
+    </div>
+    <div class="col-md-12 mt-2">
+
+        <div class="card mb-3 card-staff " *ngFor="let s of staffs">
+            <div class="card-header d-flex justify-content-between">
+                <span><b>Staff ID : </b>{{s.staffId}}</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{s.name}}</h5>
+                <hr>
+                <p class="card-text">
+                    <span class="me-5"><b>Tel. : </b>{{s.tel}}</span>
+                    <span class="me-5"><b>Address : </b>{{s.address}}</span>
+                </p>
+                <hr>
+                
+                <div class="d-flex">
+                    <div class="me-3">
+                        <a routerLink="/staff/edit/{{s._id}}" class="btn btn-warning">Edit</a>
+                    </div>
+                    <div class="me-3">
+                        <a (click)="deleteStaff(s._id)" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        
+        
+    </div>
+</div>

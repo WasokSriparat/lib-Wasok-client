@@ -1,0 +1,21 @@
+.box-borrow{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.6s;
+}
+.btn-borrow{
+    width: 50%;
+    border: 0;
+    border-radius: 25px;
+    padding: 15px;
+    background: #B9F6CA;
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+.btn-borrow:hover{
+    border-radius: 0;
+    background: #00E676;
+    width: 60%;
+    transform: scale(1.1);
+}

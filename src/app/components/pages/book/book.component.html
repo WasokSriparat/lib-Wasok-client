@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="book.component.css">
+<div class="row mt-3">
+    <div class="col-md-12" style="text-align: right;">
+        <a routerLink="/book/add" class="btn btn-success">Add new Book</a>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="h1">All Books</div>
+    <div class="input-group my-3" [formGroup]="searchForm">
+        <input type="text" class="form-control" placeholder="Book Name" formControlName="searchName"/>
+        <button class="input-group-text btn btn-primary" (click)="searchName()">Search</button>
+    </div>
+    <div class="col-md-12 mt-2">
+
+        <div class="card mb-3 card-book " *ngFor="let b of books">
+            <div class="card-header d-flex justify-content-between">
+                <span><b>Book ID : </b>{{b.bookId}}</span>
+                <span><b>Status : </b>{{b.status}}</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{b.name}}</h5>
+                <hr>
+                <p class="card-text">
+                    <span class="me-5"><b>Author : </b>{{b.author}}</span>
+                    <span class="me-5"><b>Publicher : </b>{{b.publicher}}</span>
+                    <span class="me-5"><b>Price : </b>{{b.price}}</span>
+                </p>
+                <hr>
+                <div class="card-text">
+                    <span class="me-5"><b>Day can borrow :</b></span>
+                    <span class="me-5"><b>[ student : </b>{{b.stdCanBorrow}}<b>]</b></span>
+                    <span class="me-5"><b>[ teacher : </b>{{b.tecCanBorrow}}<b>]</b></span>
+                </div>
+                <hr>
+                
+                <div class="d-flex">
+                    <div class="me-3">
+                        <a routerLink="/book/edit/{{b._id}}" class="btn btn-warning">Edit</a>
+                    </div>
+                    <div class="me-3">
+                        <button (click)="deleteBook(b._id)" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        
+        
+    </div>
+</div>
